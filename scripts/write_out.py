@@ -80,6 +80,7 @@ def main():
                 if args.num_examples > 0
                 else enumerate(docs)
             ):
+                print(f"DOC: {doc}")
                 f.write(EXAMPLE_DIVIDER.format(i=i))
                 ctx = task.fewshot_context(
                     doc=doc,

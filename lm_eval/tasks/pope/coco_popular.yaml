@@ -1,0 +1,19 @@
+group:
+  - multiple_choice
+  - vision_language
+task: pope_coco_popular
+dataset_path: asuglia/coco_pope
+dataset_name: null
+output_type: multiple_choice
+test_split: popular
+fewshot_split: null
+num_fewshot: 0
+doc_to_text: "Question: {{text}}\nAnswer:"
+doc_to_target: "label"
+doc_to_choice: ['no', 'yes']
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0

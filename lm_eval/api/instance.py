@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
-from typing import Literal, Tuple
+from typing import Literal, Optional, Tuple
+
+from PIL.Image import Image
 
 
 @dataclass
@@ -36,3 +38,8 @@ class Instance:
         return (
             self.arguments if isinstance(self.arguments, tuple) else (self.arguments,)
         )
+
+
+@dataclass
+class VLInstance(Instance):
+    image: Optional[Image] = None
